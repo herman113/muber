@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 
 export default class UserForm extends Component {
   constructor(props) {
@@ -19,9 +18,6 @@ export default class UserForm extends Component {
     e.preventDefault();
     // console.log(this.state.firstName);
     this.props.onUserFormSubmit(this.state.firstName);
-    // axios.post('http://localhost:3050/api/drivers', { email })
-    //   .then((result) => {
-    //   });
   }
   render() {
     return (
@@ -39,7 +35,7 @@ export default class UserForm extends Component {
               onChange={(e) => {this.setState({ firstName: e.target.value })}}
               />
             </div>
-          <div className="ui field last-name">
+          {/* <div className="ui field last-name">
             <label>Last Name:</label>
             <input
               type="text"
@@ -55,10 +51,10 @@ export default class UserForm extends Component {
               // value={this.state.email}
               onChange={this.onInputChangeEmail}
               />
-          </div>
-          <div className="log-state">
+          </div> */}
+          {/* <div className="log-state"> */}
             {/* {console.log(this.state.firstName)} */}
-          </div>
+          {/* </div> */}
           <button type="submit">Submit</button>
         </form>
       </div>
