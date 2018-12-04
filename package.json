@@ -4,15 +4,48 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test nodemon --exec 'mocha --recursive -R min'"
+    "test": "NODE_ENV=test nodemon --exec 'mocha --recursive -R min'",
+    "start": "node index.js",
+    "clean": "rimraf dist",
+    "build": "NODE_ENV=production npm run clean && webpack -p",
+    "serve": "webpack-dev-server",
+    "deploy": "npm run build && subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.15.2",
-    "express": "^4.14.0",
+    "express": "^4.16.4",
+    "faker": "^3.1.0",
+    "file-loader": "^2.0.0",
+    "lodash": "^4.17.2",
     "mocha": "^3.2.0",
     "mongoose": "^4.7.1",
-    "supertest": "^2.0.1"
+    "nodemon": "^1.18.7",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
+    "react-hot-loader": "^4.3.12",
+    "react-input-range": "^0.9.2",
+    "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "redux-form": "^6.3.2",
+    "redux-thunk": "^2.1.0",
+    "style-loader": "^0.23.1",
+    "supertest": "^2.0.1",
+    "url-loader": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.0",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.5.4",
+    "webpack": "2.2.0-rc.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^2.2.0-rc.0"
   }
 }
