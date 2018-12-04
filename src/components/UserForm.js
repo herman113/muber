@@ -4,39 +4,39 @@ import axios from 'axios';
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
     this.state = {
-      name: '',
+      firstName: '',
+      lastName: '',
       email: ''
     };
-  }
-  onInputChangeName(e) {
-    // console.log(this.state.name);
-    // console.log(e.target.value);
   }
   onInputChangeEmail(e) {
     console.log(e.target.value);
   }
-  onSubmit() {
-    // e.preventDefault();
-
-    // console.log(e);
+  onFormSubmit(e) {
+  // onFormSubmit = (e) => {
+    e.preventDefault();
+    // console.log(this.state.firstName);
+    this.props.onUserFormSubmit(this.state.firstName);
     // axios.post('http://localhost:3050/api/drivers', { email })
     //   .then((result) => {
-        
     //   });
   }
   render() {
     return (
       <div className="ui segment">
         <h3>User Form</h3>
-        <form onSubmit={this.onSubmit} className="ui form">
+        <form onSubmit={this.onFormSubmit} className="ui form">
+        {/* <form onSubmit={(e) => this.onFormSubmit(e)} className="ui form"> */}
+        {/* <form onSubmit={this.onFormSubmit.bind(this)} className="ui form"> */}
           <div className="ui field first-name">
             <label>First Name:</label>
             <input
               type="text"
-              name="name"
-              value={this.state.name}
-              onChange={(e) => {this.setState({ name: e.target.value })}}
+              name="first-name"
+              value={this.state.firstName}
+              onChange={(e) => {this.setState({ firstName: e.target.value })}}
               />
             </div>
           <div className="ui field last-name">
@@ -57,7 +57,7 @@ export default class UserForm extends Component {
               />
           </div>
           <div className="log-state">
-            {/* {console.log(this.state.name)} */}
+            {/* {console.log(this.state.firstName)} */}
           </div>
           <button type="submit">Submit</button>
         </form>
