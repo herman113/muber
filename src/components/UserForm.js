@@ -34,15 +34,15 @@ export default class UserForm extends Component {
               value={this.state.firstName}
               onChange={(e) => {this.setState({ firstName: e.target.value })}}
               />
-            </div>
-          {/* <div className="ui field last-name">
+          </div>
+          <div className="ui field last-name">
             <label>Last Name:</label>
             <input
               type="text"
               name="last-name"
               onChange={(e) => {console.log(e.target.value.toUpperCase())}}
-              />
-            </div>
+            />
+          </div>
           <div className="ui field email">
             <label>Email:</label>
             <input
@@ -50,11 +50,11 @@ export default class UserForm extends Component {
               name="email"
               // value={this.state.email}
               onChange={this.onInputChangeEmail}
-              />
-          </div> */}
-          {/* <div className="log-state"> */}
-            {/* {console.log(this.state.firstName)} */}
-          {/* </div> */}
+            />
+          </div>
+          <div className="log-state">
+            {console.log(this.state.firstName)}
+          </div>
           <button type="submit">Submit</button>
         </form>
       </div>
