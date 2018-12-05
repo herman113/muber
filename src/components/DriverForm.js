@@ -11,15 +11,18 @@ class DriverForm extends Component {
   }
   onFormSubmit(e) {
     e.preventDefault()
-    axios.get('https://api.unsplash.com/search/photos', {
+    axios.post('http://localhost:3050/api/drivers', {
       params: { query: this.state.email},
-      headers: {
-        Authorization: 'Client-ID ab42ac0bbd4b163903df5c6741f5a48f717b437f5e8d31529c572d7e8c831f4c'
-      }
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*'
+      // }
     })
     .then((response) => {
       console.log(response.data.results);
-    });
+    })
+    .catch((request) => {
+      console.log(request);
+    })
   }
   render() {
     return (
