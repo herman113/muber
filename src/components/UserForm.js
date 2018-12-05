@@ -53,7 +53,7 @@ export default class UserForm extends Component {
             />
           </div>
           <div className="log-state">
-            {console.log(this.state.firstName)}
+            {/* {console.log(this.state.firstName)} */}
           </div>
           <button type="submit">Submit</button>
         </form>
