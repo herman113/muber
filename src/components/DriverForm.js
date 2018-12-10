@@ -14,7 +14,9 @@ class DriverForm extends Component {
     axios.post('http://localhost:3050/api/drivers', {
       params: { query: this.state.email},
       // headers: {
-      //   'Access-Control-Allow-Origin': '*'
+      //   'Access-Control-Allow-Origin': '*',
+      //   'crossDomain': true,
+      //   'Content-Type': 'text/plain;charset=utf-8'
       // }
     })
     .then((response) => {

@@ -14,9 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
+    "@babel/polyfill": "^7.0.0",
     "body-parser": "^1.15.2",
+    "cors": "^2.8.4",
     "express": "^4.16.4",
     "faker": "^3.1.0",
     "file-loader": "^2.0.0",
